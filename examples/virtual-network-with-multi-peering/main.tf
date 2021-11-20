@@ -34,8 +34,8 @@ module "peering1" {
   resource_group_name  = azurerm_virtual_network.vnet1.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet1.name
   peerings = [
-    { name = azurerm_virtual_network.vnet2.name, remote_virtual_network_id = azurerm_virtual_network.vent2.id },
-    { name = azurerm_virtual_network.vnet3.name, remote_virtual_network_id = azurerm_virtual_network.vent3.id }
+    { name = azurerm_virtual_network.vnet2.name, remote_virtual_network_id = azurerm_virtual_network.vnet2.id },
+    { name = azurerm_virtual_network.vnet3.name, remote_virtual_network_id = azurerm_virtual_network.vnet3.id }
   ]
 }
 
