@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_resource_group" "rg" {
   name     = "terraform-azurerm-virtual-network-peering"
   location = "West Europe"
