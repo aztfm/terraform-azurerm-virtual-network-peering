@@ -1,7 +1,7 @@
 # Azure Virtual Network Peering - Terraform Module
-![Testing module](https://github.com/aztfm/terraform-azurerm-virtual-network-peering/workflows/Testing%20module/badge.svg?branch=main)
-[![TF Registry](https://img.shields.io/badge/terraform-registry-blueviolet.svg)](https://registry.terraform.io/modules/aztfm/virtual-network-peering/azurerm/)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/aztfm/terraform-azurerm-virtual-network-peering)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aztfm/terraform-azurerm-virtual-network-peering/Release?label=Testing&logo=GitHub)
+[![Terraform Registry](https://img.shields.io/badge/Terraform-registry-blueviolet.svg?logo=terraform)](https://registry.terraform.io/modules/aztfm/virtual-network-peering/azurerm/)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/aztfm/terraform-azurerm-virtual-network-peering?label=Release)
 
 ## Version compatibility
 
@@ -19,7 +19,6 @@ The following parameters are supported:
 | virtual\_network\_name | The full Azure resource ID of the remote virtual network.                      |      `string`       |   n/a   |   yes    |
 | peerings               | List containing the blocks for the configuration of the peerings.              | `list(map(string))` |   n/a   |   yes    |
 
-##
 The peerings supports the following:
 
 | Name                            | Description                                                                                          |   Type   | Default | Required |
