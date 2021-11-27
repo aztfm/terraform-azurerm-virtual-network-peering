@@ -3,7 +3,6 @@ resource "azurerm_resource_group" "rg" {
   location = "West Europe"
 }
 
-
 resource "azurerm_virtual_network" "vnet1" {
   name                = "virtual-network-1"
   resource_group_name = azurerm_resource_group.rg.name

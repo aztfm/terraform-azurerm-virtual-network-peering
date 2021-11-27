@@ -1,14 +1,14 @@
-variable resource_group_name {
+variable "resource_group_name" {
   type        = string
   description = "The name of the resource group in which to create the virtual network peering."
 }
 
-variable virtual_network_name {
+variable "virtual_network_name" {
   type        = string
   description = "The full Azure resource ID of the remote virtual network."
 }
 
-variable peerings {
+variable "peerings" {
   type        = list(map(string))
   description = "List containing the blocks for the configuration of the peerings."
   /*
