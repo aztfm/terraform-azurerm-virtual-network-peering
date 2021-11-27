@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "terraform-azurerm-virtual-network-peering"
+  name     = "resource-group"
   location = "West Europe"
 }
 
@@ -18,14 +18,14 @@ resource "azurerm_subnet" "subnet" {
 }
 
 resource "azurerm_virtual_network" "vnet2" {
-  name                = "virtual_network_1"
+  name                = "virtual-network-2"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   address_space       = ["10.2.0.0/16"]
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                = "public_ip"
+  name                = "public-ip"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   allocation_method   = "Dynamic"
@@ -33,9 +33,9 @@ resource "azurerm_public_ip" "pip" {
 }
 
 resource "azurerm_virtual_network_gateway" "vgw" {
-  name                = "virtual_network_gateway"
-  resource_group_name = azurerm_virtual_network.rg.resource_group_name
-  location            = azurerm_virtual_network.rg.location
+  name                = "virtual-network-gateway"
+  resource_group_name = azurerm_virtual_network.vnet1.resource_group_name
+  location            = azurerm_virtual_network.vnet1.location
   type                = "Vpn"
   vpn_type            = "RouteBased"
   sku                 = "Basic"
