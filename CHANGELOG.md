@@ -1,3 +1,18 @@
+<!-- markdownlint-disable MD041 MD013 -->
+## 2.0.0 (January 10, 2024)
+
+BREAKING CHANGES:
+
+* dependencies: updating to `v1.3.0` minimum of `terraform`.
+
+ENHANCEMENTS:
+
+* Internal changes that change the way data is received by child parameters, but do not change the behavior of the module.
+* the `allow_virtual_network_access` parameter property now defaults to `true`.
+* the `allow_forwarded_traffic` parameter property now defaults to `false`.
+* the `allow_gateway_transit` parameter property now defaults to `false`.
+* the `use_remote_gateways` parameter property now defaults to `false`.
+
 ## 1.0.1 (November 27, 2021)
 
 ENHANCEMENTS:
