@@ -40,6 +40,7 @@ resource "azurerm_virtual_network_gateway" "vgw" {
   vpn_type            = "RouteBased"
   sku                 = "Basic"
   generation          = "Generation1"
+
   ip_configuration {
     name                          = "vnetGatewayConfig"
     private_ip_address_allocation = "Dynamic"
@@ -51,9 +52,10 @@ resource "azurerm_virtual_network_gateway" "vgw" {
 module "peering1" {
   depends_on           = [azurerm_virtual_network_gateway.vgw]
   source               = "aztfm/virtual-network-peering/azurerm"
-  version              = ">=1.0.0"
+  version              = ">=2.0.0"
   resource_group_name  = azurerm_virtual_network.vnet1.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet1.name
+
   peerings = [
     {
       name                      = azurerm_virtual_network.vnet2.name
@@ -65,7 +67,7 @@ module "peering1" {
 
 module "peering2" {
   source               = "aztfm/virtual-network-peering/azurerm"
-  version              = ">=1.0.0"
+  version              = ">=2.0.0"
   resource_group_name  = azurerm_virtual_network.vnet2.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet2.name
   peerings = [
