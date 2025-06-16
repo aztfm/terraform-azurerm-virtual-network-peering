@@ -1,3 +1,13 @@
+## 3.0.0 (June 16, 2025)
+
+BREAKING CHANGES:
+
+* dependencies: updating to `v1.9.0` minimum of `terraform`.
+
+ENHANCEMENTS:
+
+* Internal changes that do not modify the operation of the module.
+
 ## 2.0.0 (January 10, 2024)
 
 BREAKING CHANGES:
